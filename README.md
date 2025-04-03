@@ -1,5 +1,8 @@
 ☁️ Rain Alert Notification System ☔
-This project is a Rain Alert Notification System that sends an SMS notification when rain is forecasted. It integrates the OpenWeatherMap API for weather data and Twilio API for SMS notifications.
+This project is a Rain Alert Notification System that sends an SMS notification when rain is forecasted. It integrates the OpenWeatherMap API for weather data and Twilio API for SMS notifications.<br>
+
+
+![Notification Screenshots](https://github.com/user-attachments/assets/2471ad31-a332-42c9-aea1-14c5828cf87f)
 
 📌 Features<br>
 ✅ Fetches weather forecast data for the next 12 hours<br>
