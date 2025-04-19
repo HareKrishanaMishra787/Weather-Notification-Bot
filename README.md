@@ -1,79 +1,71 @@
-☁️ Rain Alert Notification System ☔
-This project is a Rain Alert Notification System that sends an SMS notification when rain is forecasted. It integrates the OpenWeatherMap API for weather data and Twilio API for SMS notifications.<br>
+# ☔ Weather Alert SMS Notifier
 
+This Python project alerts you via SMS if rain is forecasted in your area within the next 12 hours. It uses the [OpenWeatherMap API](https://openweathermap.org/forecast5) for weather forecasting and [Twilio](https://www.twilio.com/) to send SMS messages.
 
-<img src = "https://github.com/user-attachments/assets/2471ad31-a332-42c9-aea1-14c5828cf87f" height = "500">
+## 📦 Features
 
-📌 Features<br>
-✅ Fetches weather forecast data for the next 12 hours<br>
-✅ Identifies rainy conditions based on weather codes<br>
-✅ Sends an SMS alert if rain is expected<br>
-✅ Uses Twilio to send notifications<br>
+- ⛅ Fetches 12-hour weather forecast data using OpenWeatherMap.
+- 📱 Sends an SMS alert if rain is predicted (based on weather condition codes).
+- ⚡ Uses Twilio API to deliver the message straight to your phone.
 
-🛠️ Tech Stack
-Python
+## 🚀 How It Works
 
-Requests (for API calls)
+1. Fetch weather forecast data for a specified location.
+2. Analyze the weather condition codes.
+3. If any code indicates rain (i.e., code < 700), send an SMS reminder to carry an umbrella.
 
-Twilio REST API (for sending SMS)
+## 🛠 Requirements
 
-OpenWeatherMap API (for weather forecasting)
+- Python 3.x
+- [requests](https://pypi.org/project/requests/)
+- [twilio](https://pypi.org/project/twilio/)
 
-🚀 How It Works
-Fetches weather data from OpenWeatherMap API for the specified location (Varanasi, India).
+Install dependencies:
 
-Checks if the weather condition ID is below 700 (indicating rain or snow).
-
-If rain is detected, it triggers an SMS alert using Twilio.
-
-The user receives a message:
-
-"It's going to rain today. Remember to bring an ☔"
-
-📦 Installation & Setup
-🔹 Prerequisites
-Python 3.x installed
-
-Twilio account with a registered phone number
-
-OpenWeatherMap API key
-
-🔹 Steps
-Clone this repository
-
-sh
-Copy
-Edit
-git clone https://github.com/your-username/Rain-Alert-Notification.git  
-cd Rain-Alert-Notification
-Install dependencies
-
-sh
-Copy
-Edit
+```bash
 pip install requests twilio
-Set up your API keys
+```
 
-Replace api_key, account_sid, and auth_token with your credentials in main.py.
+## 🔐 Environment Variables
 
-Update to and from_ phone numbers with Twilio's verified numbers.
+To keep your credentials safe, create a `.env` file or use environment variables for:
 
-Run the script
+- `OPENWEATHER_API_KEY`
+- `TWILIO_ACCOUNT_SID`
+- `TWILIO_AUTH_TOKEN`
+- `TWILIO_FROM_NUMBER`
+- `TWILIO_TO_NUMBER`
 
-sh
-Copy
-Edit
-python main.py
-🔒 Security Considerations
-Do not expose your API keys in public repositories. Use environment variables or a .env file to store credentials.
+> **Important:** Never hardcode API keys or secrets in your scripts. The current version includes sensitive information — be sure to remove or secure it before pushing to a public repository.
 
-📝 Future Enhancements
-🔹 Add email notifications
-🔹 Integrate push notifications for mobile apps
-🔹 Extend to multiple cities
+## 🧠 Code Overview
 
-👨‍💻 Author
-Hare Krishna Mishra
+- `main.py`: Contains the main logic for fetching weather data and sending alerts.
+- `.gitignore`: Ensures sensitive and unnecessary files like virtual environments aren't tracked.
+- `pyvenv.cfg`: Part of the virtual environment setup.
 
-⭐ Contribute
-If you find this project helpful, feel free to fork, improve, and submit a pull request!
+## 🌍 Default Location
+
+This project currently checks the weather for:
+
+- **Latitude:** 25.317644  
+- **Longitude:** 82.973915  
+(Corresponding to Varanasi, India)
+
+You can change this by modifying the `lat` and `lon` values in the script.
+
+## 📤 Output
+
+If rain is expected, you’ll receive a message like:
+
+```
+It's going to rain today. Remember to bring an ☔
+```
+
+## 📄 License
+
+MIT License. Feel free to use, modify, and share this project.
+
+---
+
+**Happy Coding! Stay dry! ☔**
